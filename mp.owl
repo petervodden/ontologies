@@ -10,14 +10,14 @@
 ]>
 
 
-<rdf:RDF xmlns="http://eidc.ceh.ac.uk/onto/mp#"
-     xml:base="http://eidc.ceh.ac.uk/onto/mp"
+<rdf:RDF xmlns="http://purl.org/voc/mp#"
+     xml:base="http://purl.org/voc/mp"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://eidc.ceh.ac.uk/onto/mp">
+    <owl:Ontology rdf:about="http://purl.org/voc/mp">
         <rdfs:comment>September 2014. This version imports a version of cpm: that is &quot;stand-alone&quot; i.e. not dependent upon CSIRO op: for any concepts. As agreed P.Vodden &amp; A.Leadbetter  16-9-2014.</rdfs:comment>
         <license>http://creativecommons.org/licenses/by/3.0/</license>
         <terms:creator>Kate Harrison
@@ -32,7 +32,7 @@ Lancaster Environment Centre
 Library Avenue, Bailrigg
 Lancaster, LA1 4AP, UK
 www.ceh.ac.uk</publisher>
-        <owl:versionIRI rdf:resource="http://eidc.ceh.ac.uk/onto/mp/3.0.0"/>
+        <owl:versionIRI rdf:resource="http://purl.org/voc/mp/3.0.0"/>
         <owl:imports rdf:resource="http://purl.org/voc/cpm"/>
         <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
         <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
@@ -52,21 +52,21 @@ www.ceh.ac.uk</publisher>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#license -->
+    <!-- http://purl.org/voc/mp#license -->
 
-    <owl:AnnotationProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#license"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/voc/mp#license"/>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#publisher -->
+    <!-- http://purl.org/voc/mp#publisher -->
 
-    <owl:AnnotationProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#publisher"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/voc/mp#publisher"/>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#rights -->
+    <!-- http://purl.org/voc/mp#rights -->
 
-    <owl:AnnotationProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#rights"/>
+    <owl:AnnotationProperty rdf:about="http://purl.org/voc/mp#rights"/>
     
 
 
@@ -87,42 +87,42 @@ www.ceh.ac.uk</publisher>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#monitoredFeature -->
+    <!-- http://purl.org/voc/mp#monitoredFeature -->
 
-    <owl:ObjectProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#monitoredFeature">
-        <rdfs:range rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredFeature"/>
-        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/voc/mp#monitoredFeature">
+        <rdfs:range rdf:resource="http://purl.org/voc/mp#MonitoredFeature"/>
+        <rdfs:domain rdf:resource="http://purl.org/voc/mp#MonitoredProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#monitoredObservableProperty -->
+    <!-- http://purl.org/voc/mp#monitoredObservableProperty -->
 
-    <owl:ObjectProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#monitoredObservableProperty">
-        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/voc/mp#monitoredObservableProperty">
+        <rdfs:domain rdf:resource="http://purl.org/voc/mp#MonitoredProperty"/>
         <rdfs:range rdf:resource="http://purl.org/voc/cpm#ObservableProperty"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#monitoringProcedure -->
+    <!-- http://purl.org/voc/mp#monitoringProcedure -->
 
-    <owl:ObjectProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#monitoringProcedure">
+    <owl:ObjectProperty rdf:about="http://purl.org/voc/mp#monitoringProcedure">
         <rdfs:label>Monitoring Procedure</rdfs:label>
-        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
-        <rdfs:range rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoringProcess"/>
+        <rdfs:domain rdf:resource="http://purl.org/voc/mp#MonitoredProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/voc/mp#MonitoringProcess"/>
     </owl:ObjectProperty>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#storesValuesFor -->
+    <!-- http://purl.org/voc/mp#storesValuesFor -->
 
-    <owl:ObjectProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#storesValuesFor">
+    <owl:ObjectProperty rdf:about="http://purl.org/voc/mp#storesValuesFor">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
         <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
         <rdfs:label>storesValuesFor</rdfs:label>
-        <rdfs:range rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
-        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoringDataset"/>
+        <rdfs:range rdf:resource="http://purl.org/voc/mp#MonitoredProperty"/>
+        <rdfs:domain rdf:resource="http://purl.org/voc/mp#MonitoringDataset"/>
     </owl:ObjectProperty>
     
 
@@ -138,28 +138,28 @@ www.ceh.ac.uk</publisher>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#dataOriginName -->
+    <!-- http://purl.org/voc/mp#dataOriginName -->
 
-    <owl:DatatypeProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#dataOriginName">
-        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#DataOrigin"/>
+    <owl:DatatypeProperty rdf:about="http://purl.org/voc/mp#dataOriginName">
+        <rdfs:domain rdf:resource="http://purl.org/voc/mp#DataOrigin"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#monitoredFeatureLabel -->
+    <!-- http://purl.org/voc/mp#monitoredFeatureLabel -->
 
-    <owl:DatatypeProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#monitoredFeatureLabel">
-        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredFeature"/>
+    <owl:DatatypeProperty rdf:about="http://purl.org/voc/mp#monitoredFeatureLabel">
+        <rdfs:domain rdf:resource="http://purl.org/voc/mp#MonitoredFeature"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#monitoringProcessResource -->
+    <!-- http://purl.org/voc/mp#monitoringProcessResource -->
 
-    <owl:DatatypeProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#monitoringProcessResource">
-        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoringProcess"/>
+    <owl:DatatypeProperty rdf:about="http://purl.org/voc/mp#monitoringProcessResource">
+        <rdfs:domain rdf:resource="http://purl.org/voc/mp#MonitoringProcess"/>
         <rdfs:range rdf:resource="&xsd;anyURI"/>
     </owl:DatatypeProperty>
     
@@ -186,7 +186,7 @@ www.ceh.ac.uk</publisher>
 
     <owl:Class rdf:about="http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#Metadata">
         <rdfs:label xml:lang="en">Metadata record</rdfs:label>
-        <rdfs:subClassOf rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoringDataset"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/voc/mp#MonitoringDataset"/>
         <rdfs:comment>An ISO 19115 Metadata record.</rdfs:comment>
     </owl:Class>
     
@@ -195,19 +195,19 @@ www.ceh.ac.uk</publisher>
     <!-- http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringActivity -->
 
     <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringActivity">
-        <rdfs:subClassOf rdf:resource="http://eidc.ceh.ac.uk/onto/mp#DataOrigin"/>
+        <rdfs:subClassOf rdf:resource="http://purl.org/voc/mp#DataOrigin"/>
     </owl:Class>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#DataOrigin -->
+    <!-- http://purl.org/voc/mp#DataOrigin -->
 
-    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#DataOrigin">
+    <owl:Class rdf:about="http://purl.org/voc/mp#DataOrigin">
         <rdfs:label>Data Origin</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#dataOriginName"/>
+                <owl:onProperty rdf:resource="http://purl.org/voc/mp#dataOriginName"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -216,22 +216,22 @@ www.ceh.ac.uk</publisher>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#Matrix -->
+    <!-- http://purl.org/voc/mp#Matrix -->
 
-    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#Matrix">
+    <owl:Class rdf:about="http://purl.org/voc/mp#Matrix">
         <terms:description>The aspect or characteristic of a Feature Of Interest that was observed, used or taken in order to estimate the result of observations on the Feature. As an example, where the Feature Of Interest is a river, the matirix might be &quot;water&quot; or &quot;sediment&quot;.</terms:description>
     </owl:Class>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#MonitoredFeature -->
+    <!-- http://purl.org/voc/mp#MonitoredFeature -->
 
-    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoredFeature">
+    <owl:Class rdf:about="http://purl.org/voc/mp#MonitoredFeature">
         <rdfs:label>Monitored Feature</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#monitoredFeatureLabel"/>
+                <owl:onProperty rdf:resource="http://purl.org/voc/mp#monitoredFeatureLabel"/>
                 <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -240,29 +240,29 @@ www.ceh.ac.uk</publisher>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty -->
+    <!-- http://purl.org/voc/mp#MonitoredProperty -->
 
-    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty">
+    <owl:Class rdf:about="http://purl.org/voc/mp#MonitoredProperty">
         <rdfs:label xml:lang="en">Monitored Property</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#monitoredObservableProperty"/>
+                <owl:onProperty rdf:resource="http://purl.org/voc/mp#monitoredObservableProperty"/>
                 <owl:onClass rdf:resource="http://purl.org/voc/cpm#ObservableProperty"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#monitoringProcedure"/>
-                <owl:onClass rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoringProcess"/>
+                <owl:onProperty rdf:resource="http://purl.org/voc/mp#monitoringProcedure"/>
+                <owl:onClass rdf:resource="http://purl.org/voc/mp#MonitoringProcess"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#monitoredFeature"/>
-                <owl:onClass rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredFeature"/>
+                <owl:onProperty rdf:resource="http://purl.org/voc/mp#monitoredFeature"/>
+                <owl:onClass rdf:resource="http://purl.org/voc/mp#MonitoredFeature"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -274,22 +274,22 @@ Monitored Properties arise as a consequence of carrying out an Environmental Mon
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#MonitoringDataset -->
+    <!-- http://purl.org/voc/mp#MonitoringDataset -->
 
-    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoringDataset">
+    <owl:Class rdf:about="http://purl.org/voc/mp#MonitoringDataset">
         <rdfs:label xml:lang="en">Monitoring Dataset</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#storesValuesFor"/>
-                <owl:onClass rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
+                <owl:onProperty rdf:resource="http://purl.org/voc/mp#storesValuesFor"/>
+                <owl:onClass rdf:resource="http://purl.org/voc/mp#MonitoredProperty"/>
                 <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
-                <owl:allValuesFrom rdf:resource="http://eidc.ceh.ac.uk/onto/mp#DataOrigin"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/voc/mp#DataOrigin"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment>Dataset documentation objects that can link monitored properties to the environmental monitoring objects and environmental monitoring activities from which datasets originate. Individuals of this class are  instantiated as ISO19115 metadata records in a catalogue.</rdfs:comment>
@@ -297,14 +297,14 @@ Monitored Properties arise as a consequence of carrying out an Environmental Mon
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/mp#MonitoringProcess -->
+    <!-- http://purl.org/voc/mp#MonitoringProcess -->
 
-    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoringProcess">
+    <owl:Class rdf:about="http://purl.org/voc/mp#MonitoringProcess">
         <rdfs:label>Monitoring Process</rdfs:label>
         <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#monitoringProcessResource"/>
+                <owl:onProperty rdf:resource="http://purl.org/voc/mp#monitoringProcessResource"/>
                 <owl:allValuesFrom rdf:resource="&xsd;anyURI"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -330,9 +330,9 @@ Monitored Properties arise as a consequence of carrying out an Environmental Mon
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://eidc.ceh.ac.uk/onto/mp#DataOrigin"/>
-            <rdf:Description rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
-            <rdf:Description rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoringDataset"/>
+            <rdf:Description rdf:about="http://purl.org/voc/mp#DataOrigin"/>
+            <rdf:Description rdf:about="http://purl.org/voc/mp#MonitoredProperty"/>
+            <rdf:Description rdf:about="http://purl.org/voc/mp#MonitoringDataset"/>
         </owl:members>
     </rdf:Description>
 </rdf:RDF>

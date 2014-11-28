@@ -3,7 +3,7 @@
 
 <!DOCTYPE rdf:RDF [
     <!ENTITY terms "http://purl.org/dc/terms/" >
-    <!ENTITY ef "http://eidc.ceh.ac.uk/onto/ef#" >
+    <!ENTITY ef "http://purl.org/voc/ef#" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
     <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
@@ -12,16 +12,16 @@
 ]>
 
 
-<rdf:RDF xmlns="http://eidc.ceh.ac.uk/onto/ef#"
-     xml:base="http://eidc.ceh.ac.uk/onto/ef"
+<rdf:RDF xmlns="http://purl.org/voc/ef#"
+     xml:base="http://purl.org/voc/ef"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:ef="http://eidc.ceh.ac.uk/onto/ef#"
+     xmlns:ef="http://purl.org/voc/ef#"
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <owl:Ontology rdf:about="http://eidc.ceh.ac.uk/onto/ef">
+    <owl:Ontology rdf:about="http://purl.org/voc/ef">
         <dc:description>This ontology is an OWLimplementation of the UML model &quot;Data Specification on Environmental Monitoring Facilties&quot; published by the INSPIRE Infrastructure for Spatial Information in Europe.</dc:description>
         <dc:creator>Kate Harrison
 Adam Leadbetter
@@ -39,7 +39,7 @@ www.ceh.ac.uk
         <terms:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
         <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation"/>
         <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent"/>
-        <owl:versionIRI rdf:resource="http://eidc.ceh.ac.uk/onto/ef/1"/>
+        <owl:versionIRI rdf:resource="http://purl.org/voc/ef/1"/>
     </owl:Ontology>
     
 
@@ -55,7 +55,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#abstractMonitoringObject.responsibleParty -->
+    <!-- http://purl.org/voc/ef#abstractMonitoringObject.responsibleParty -->
 
     <owl:ObjectProperty rdf:about="&ef;abstractMonitoringObject.responsibleParty">
         <rdfs:label>responsibleParty</rdfs:label>
@@ -66,7 +66,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#activityTime -->
+    <!-- http://purl.org/voc/ef#activityTime -->
 
     <owl:ObjectProperty rdf:about="&ef;activityTime">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
@@ -75,7 +75,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#belongsTo -->
+    <!-- http://purl.org/voc/ef#belongsTo -->
 
     <owl:ObjectProperty rdf:about="&ef;belongsTo">
         <rdfs:range>
@@ -98,7 +98,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#boundingBox -->
+    <!-- http://purl.org/voc/ef#boundingBox -->
 
     <owl:ObjectProperty rdf:about="&ef;boundingBox">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent#GeographicBoundingBox"/>
@@ -106,7 +106,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#broader -->
+    <!-- http://purl.org/voc/ef#broader -->
 
     <owl:ObjectProperty rdf:about="&ef;broader">
         <rdfs:domain>
@@ -129,7 +129,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#contains -->
+    <!-- http://purl.org/voc/ef#contains -->
 
     <owl:ObjectProperty rdf:about="&ef;contains">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -154,7 +154,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#environmentalMonitoringActivity.responsibleParty -->
+    <!-- http://purl.org/voc/ef#environmentalMonitoringActivity.responsibleParty -->
 
     <owl:ObjectProperty rdf:about="&ef;environmentalMonitoringActivity.responsibleParty">
         <rdfs:label>responsibleParty</rdfs:label>
@@ -165,7 +165,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#featureOfInterest -->
+    <!-- http://purl.org/voc/ef#featureOfInterest -->
 
     <owl:ObjectProperty rdf:about="&ef;featureOfInterest">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
@@ -174,7 +174,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#geometry -->
+    <!-- http://purl.org/voc/ef#geometry -->
 
     <owl:ObjectProperty rdf:about="&ef;geometry">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Object"/>
@@ -183,7 +183,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#hasObservation -->
+    <!-- http://purl.org/voc/ef#hasObservation -->
 
     <owl:ObjectProperty rdf:about="&ef;hasObservation">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#Observation"/>
@@ -192,7 +192,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#hierarchy.linkingTime -->
+    <!-- http://purl.org/voc/ef#hierarchy.linkingTime -->
 
     <owl:ObjectProperty rdf:about="&ef;hierarchy.linkingTime">
         <rdfs:label>linkingTime</rdfs:label>
@@ -203,7 +203,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#involvedIn -->
+    <!-- http://purl.org/voc/ef#involvedIn -->
 
     <owl:ObjectProperty rdf:about="&ef;involvedIn">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -214,7 +214,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#legalBackground -->
+    <!-- http://purl.org/voc/ef#legalBackground -->
 
     <owl:ObjectProperty rdf:about="&ef;legalBackground">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Citation"/>
@@ -223,7 +223,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#legislationCitation -->
+    <!-- http://purl.org/voc/ef#legislationCitation -->
 
     <owl:ObjectProperty rdf:about="&ef;legislationCitation">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Citation"/>
@@ -232,7 +232,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#linkingTime -->
+    <!-- http://purl.org/voc/ef#linkingTime -->
 
     <owl:ObjectProperty rdf:about="&ef;linkingTime">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
@@ -240,7 +240,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#narrower -->
+    <!-- http://purl.org/voc/ef#narrower -->
 
     <owl:ObjectProperty rdf:about="&ef;narrower">
         <owl:inverseOf rdf:resource="&ef;broader"/>
@@ -264,7 +264,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#networkFacility.linkingTime -->
+    <!-- http://purl.org/voc/ef#networkFacility.linkingTime -->
 
     <owl:ObjectProperty rdf:about="&ef;networkFacility.linkingTime">
         <rdfs:label>linkingTime</rdfs:label>
@@ -275,7 +275,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#observedProperty -->
+    <!-- http://purl.org/voc/ef#observedProperty -->
 
     <owl:ObjectProperty rdf:about="&ef;observedProperty">
         <rdfs:domain rdf:resource="&ef;ObservingCapability"/>
@@ -283,7 +283,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#observingCapability -->
+    <!-- http://purl.org/voc/ef#observingCapability -->
 
     <owl:ObjectProperty rdf:about="&ef;observingCapability">
         <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
@@ -292,7 +292,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#observingTime -->
+    <!-- http://purl.org/voc/ef#observingTime -->
 
     <owl:ObjectProperty rdf:about="&ef;observingTime">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
@@ -301,7 +301,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#operationalActivityPeriod -->
+    <!-- http://purl.org/voc/ef#operationalActivityPeriod -->
 
     <owl:ObjectProperty rdf:about="&ef;operationalActivityPeriod">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
@@ -310,7 +310,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#procedure -->
+    <!-- http://purl.org/voc/ef#procedure -->
 
     <owl:ObjectProperty rdf:about="&ef;procedure">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#Process"/>
@@ -319,7 +319,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#relatedTo -->
+    <!-- http://purl.org/voc/ef#relatedTo -->
 
     <owl:ObjectProperty rdf:about="&ef;relatedTo">
         <rdfs:range>
@@ -342,7 +342,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#reportedTo -->
+    <!-- http://purl.org/voc/ef#reportedTo -->
 
     <owl:ObjectProperty rdf:about="&ef;reportedTo">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -353,7 +353,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#representativePoint -->
+    <!-- http://purl.org/voc/ef#representativePoint -->
 
     <owl:ObjectProperty rdf:about="&ef;representativePoint">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Point"/>
@@ -362,7 +362,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#responsibleParty -->
+    <!-- http://purl.org/voc/ef#responsibleParty -->
 
     <owl:ObjectProperty rdf:about="&ef;responsibleParty">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"/>
@@ -370,7 +370,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#setUpFor -->
+    <!-- http://purl.org/voc/ef#setUpFor -->
 
     <owl:ObjectProperty rdf:about="&ef;setUpFor">
         <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringActivity"/>
@@ -379,7 +379,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#supersededBy -->
+    <!-- http://purl.org/voc/ef#supersededBy -->
 
     <owl:ObjectProperty rdf:about="&ef;supersededBy">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -390,7 +390,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#supersedes -->
+    <!-- http://purl.org/voc/ef#supersedes -->
 
     <owl:ObjectProperty rdf:about="&ef;supersedes">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -402,7 +402,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#triggers -->
+    <!-- http://purl.org/voc/ef#triggers -->
 
     <owl:ObjectProperty rdf:about="&ef;triggers">
         <rdfs:range rdf:resource="&ef;EnvironmentalMonitoringActivity"/>
@@ -412,7 +412,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#uses -->
+    <!-- http://purl.org/voc/ef#uses -->
 
     <owl:ObjectProperty rdf:about="&ef;uses">
         <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
@@ -434,7 +434,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#abstractMonitoringObject.inspireId -->
+    <!-- http://purl.org/voc/ef#abstractMonitoringObject.inspireId -->
 
     <owl:DatatypeProperty rdf:about="&ef;abstractMonitoringObject.inspireId">
         <rdfs:label>inspireId</rdfs:label>
@@ -445,7 +445,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#abstractMonitoringObject.onlineResource -->
+    <!-- http://purl.org/voc/ef#abstractMonitoringObject.onlineResource -->
 
     <owl:DatatypeProperty rdf:about="&ef;abstractMonitoringObject.onlineResource">
         <rdfs:label>onlineResource</rdfs:label>
@@ -456,13 +456,13 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#activityConditions -->
+    <!-- http://purl.org/voc/ef#activityConditions -->
 
     <owl:DatatypeProperty rdf:about="&ef;activityConditions"/>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#additionalDescription -->
+    <!-- http://purl.org/voc/ef#additionalDescription -->
 
     <owl:DatatypeProperty rdf:about="&ef;additionalDescription">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#CharacterString"/>
@@ -471,7 +471,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#comment -->
+    <!-- http://purl.org/voc/ef#comment -->
 
     <owl:DatatypeProperty rdf:about="&ef;comment">
         <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#CharacterString"/>
@@ -480,7 +480,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#description -->
+    <!-- http://purl.org/voc/ef#description -->
 
     <owl:DatatypeProperty rdf:about="&ef;description">
         <rdfs:comment>Abstract - do not instantiate</rdfs:comment>
@@ -488,7 +488,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#environmentalMonitoringActivity.inspireId -->
+    <!-- http://purl.org/voc/ef#environmentalMonitoringActivity.inspireId -->
 
     <owl:DatatypeProperty rdf:about="&ef;environmentalMonitoringActivity.inspireId">
         <rdfs:label>inspireId</rdfs:label>
@@ -499,7 +499,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#environmentalMonitoringActivity.onlineResource -->
+    <!-- http://purl.org/voc/ef#environmentalMonitoringActivity.onlineResource -->
 
     <owl:DatatypeProperty rdf:about="&ef;environmentalMonitoringActivity.onlineResource">
         <rdfs:label>onlineResource</rdfs:label>
@@ -510,7 +510,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#inspireId -->
+    <!-- http://purl.org/voc/ef#inspireId -->
 
     <owl:DatatypeProperty rdf:about="&ef;inspireId">
         <rdfs:comment>Abstract Data Property</rdfs:comment>
@@ -519,7 +519,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#measurementRegime -->
+    <!-- http://purl.org/voc/ef#measurementRegime -->
 
     <owl:DatatypeProperty rdf:about="&ef;measurementRegime">
         <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringFacility"/>
@@ -528,7 +528,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#mediaMonitored -->
+    <!-- http://purl.org/voc/ef#mediaMonitored -->
 
     <owl:DatatypeProperty rdf:about="&ef;mediaMonitored">
         <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
@@ -537,7 +537,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#mobile -->
+    <!-- http://purl.org/voc/ef#mobile -->
 
     <owl:DatatypeProperty rdf:about="&ef;mobile">
         <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringFacility"/>
@@ -546,7 +546,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#monitoringObject.name -->
+    <!-- http://purl.org/voc/ef#monitoringObject.name -->
 
     <owl:DatatypeProperty rdf:about="&ef;monitoringObject.name">
         <rdfs:label>name</rdfs:label>
@@ -556,13 +556,13 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#name -->
+    <!-- http://purl.org/voc/ef#name -->
 
     <owl:DatatypeProperty rdf:about="&ef;name"/>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#observationRequired -->
+    <!-- http://purl.org/voc/ef#observationRequired -->
 
     <owl:DatatypeProperty rdf:about="&ef;observationRequired">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -572,7 +572,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#observingCapability.onlineResource -->
+    <!-- http://purl.org/voc/ef#observingCapability.onlineResource -->
 
     <owl:DatatypeProperty rdf:about="&ef;observingCapability.onlineResource">
         <rdfs:label>onlineResource</rdfs:label>
@@ -583,7 +583,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#observingCapabilityRequired -->
+    <!-- http://purl.org/voc/ef#observingCapabilityRequired -->
 
     <owl:DatatypeProperty rdf:about="&ef;observingCapabilityRequired">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -593,7 +593,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#onlineResource -->
+    <!-- http://purl.org/voc/ef#onlineResource -->
 
     <owl:DatatypeProperty rdf:about="&ef;onlineResource">
         <rdfs:range rdf:resource="&xsd;anyURI"/>
@@ -601,7 +601,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#organisationLevel -->
+    <!-- http://purl.org/voc/ef#organisationLevel -->
 
     <owl:DatatypeProperty rdf:about="&ef;organisationLevel">
         <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringNetwork"/>
@@ -610,7 +610,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#processType -->
+    <!-- http://purl.org/voc/ef#processType -->
 
     <owl:DatatypeProperty rdf:about="&ef;processType">
         <rdfs:domain rdf:resource="&ef;ObservingCapability"/>
@@ -619,7 +619,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#purpose -->
+    <!-- http://purl.org/voc/ef#purpose -->
 
     <owl:DatatypeProperty rdf:about="&ef;purpose">
         <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
@@ -628,7 +628,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#reportDate -->
+    <!-- http://purl.org/voc/ef#reportDate -->
 
     <owl:DatatypeProperty rdf:about="&ef;reportDate">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -638,7 +638,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#reportToLegalAct.description -->
+    <!-- http://purl.org/voc/ef#reportToLegalAct.description -->
 
     <owl:DatatypeProperty rdf:about="&ef;reportToLegalAct.description">
         <rdfs:label>description</rdfs:label>
@@ -649,7 +649,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#reportedEnvelope -->
+    <!-- http://purl.org/voc/ef#reportedEnvelope -->
 
     <owl:DatatypeProperty rdf:about="&ef;reportedEnvelope">
         <rdf:type rdf:resource="&owl;FunctionalProperty"/>
@@ -659,7 +659,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#resultAcquisitionSource -->
+    <!-- http://purl.org/voc/ef#resultAcquisitionSource -->
 
     <owl:DatatypeProperty rdf:about="&ef;resultAcquisitionSource">
         <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringFacility"/>
@@ -668,7 +668,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#resultNature -->
+    <!-- http://purl.org/voc/ef#resultNature -->
 
     <owl:DatatypeProperty rdf:about="&ef;resultNature">
         <rdfs:domain rdf:resource="&ef;ObservingCapability"/>
@@ -677,7 +677,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#specialisedEMFType -->
+    <!-- http://purl.org/voc/ef#specialisedEMFType -->
 
     <owl:DatatypeProperty rdf:about="&ef;specialisedEMFType">
         <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringFacility"/>
@@ -749,7 +749,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#AbstractMonitoringFeature -->
+    <!-- http://purl.org/voc/ef#AbstractMonitoringFeature -->
 
     <owl:Class rdf:about="&ef;AbstractMonitoringFeature">
         <rdfs:label>Abstract Monitoring Feature</rdfs:label>
@@ -771,7 +771,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#AbstractMonitoringObject -->
+    <!-- http://purl.org/voc/ef#AbstractMonitoringObject -->
 
     <owl:Class rdf:about="&ef;AbstractMonitoringObject">
         <rdfs:label>Abstract Monitoring Object</rdfs:label>
@@ -866,7 +866,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#AnyDomainLink -->
+    <!-- http://purl.org/voc/ef#AnyDomainLink -->
 
     <owl:Class rdf:about="&ef;AnyDomainLink">
         <rdfs:subClassOf>
@@ -879,7 +879,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringActivity -->
+    <!-- http://purl.org/voc/ef#EnvironmentalMonitoringActivity -->
 
     <owl:Class rdf:about="&ef;EnvironmentalMonitoringActivity">
         <rdfs:label>Environmental Monitoring Activity</rdfs:label>
@@ -935,7 +935,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringFacility -->
+    <!-- http://purl.org/voc/ef#EnvironmentalMonitoringFacility -->
 
     <owl:Class rdf:about="&ef;EnvironmentalMonitoringFacility">
         <rdfs:label>Environmental Monitoring Facility</rdfs:label>
@@ -1001,7 +1001,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringNetwork -->
+    <!-- http://purl.org/voc/ef#EnvironmentalMonitoringNetwork -->
 
     <owl:Class rdf:about="&ef;EnvironmentalMonitoringNetwork">
         <rdfs:label>Environmental Monitoring Network</rdfs:label>
@@ -1029,7 +1029,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringProgramme -->
+    <!-- http://purl.org/voc/ef#EnvironmentalMonitoringProgramme -->
 
     <owl:Class rdf:about="&ef;EnvironmentalMonitoringProgramme">
         <rdfs:label>Environmental Monitoring Programme</rdfs:label>
@@ -1038,7 +1038,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#Hierarchy -->
+    <!-- http://purl.org/voc/ef#Hierarchy -->
 
     <owl:Class rdf:about="&ef;Hierarchy">
         <rdfs:subClassOf>
@@ -1057,13 +1057,13 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#NetworkFacility -->
+    <!-- http://purl.org/voc/ef#NetworkFacility -->
 
     <owl:Class rdf:about="&ef;NetworkFacility"/>
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#ObservingCapability -->
+    <!-- http://purl.org/voc/ef#ObservingCapability -->
 
     <owl:Class rdf:about="&ef;ObservingCapability">
         <rdfs:label>Observing Capability</rdfs:label>
@@ -1117,7 +1117,7 @@ www.ceh.ac.uk
     
 
 
-    <!-- http://eidc.ceh.ac.uk/onto/ef#ReportToLegalAct -->
+    <!-- http://purl.org/voc/ef#ReportToLegalAct -->
 
     <owl:Class rdf:about="&ef;ReportToLegalAct">
         <rdfs:subClassOf>
