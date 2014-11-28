@@ -1,0 +1,343 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://eidc.ceh.ac.uk/onto/mp#"
+     xml:base="http://eidc.ceh.ac.uk/onto/mp"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://eidc.ceh.ac.uk/onto/mp">
+        <rdfs:comment>September 2014. This version imports a version of cpm: that is &quot;stand-alone&quot; i.e. not dependent upon CSIRO op: for any concepts. As agreed P.Vodden &amp; A.Leadbetter  16-9-2014.</rdfs:comment>
+        <license>http://creativecommons.org/licenses/by/3.0/</license>
+        <terms:creator>Kate Harrison
+Phil Trembath
+Peter Vodden
+Dan Wright</terms:creator>
+        <terms:description>This &quot;overlay&quot; ontology defines concepts via which to link the BODC Complex Properties Model to the CEH Environmental Monitoring Facilities model, using PROV-O as a linking mechanism. This allows the use of discovery level metadata to answer questions like &quot;where have we measured X?&quot;.</terms:description>
+        <terms:contributor>Adam Leadbetter</terms:contributor>
+        <owl:versionInfo>Draft v11</owl:versionInfo>
+        <publisher>Centre for Ecology &amp; Hydrology
+Lancaster Environment Centre
+Library Avenue, Bailrigg
+Lancaster, LA1 4AP, UK
+www.ceh.ac.uk</publisher>
+        <owl:versionIRI rdf:resource="http://eidc.ceh.ac.uk/onto/mp/3.0.0"/>
+        <owl:imports rdf:resource="http://purl.org/voc/cpm"/>
+        <owl:imports rdf:resource="http://www.opengis.net/ont/geosparql"/>
+        <owl:imports rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/prov-o#"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#license -->
+
+    <owl:AnnotationProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#license"/>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#publisher -->
+
+    <owl:AnnotationProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#publisher"/>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#rights -->
+
+    <owl:AnnotationProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#rights"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:AnnotationProperty rdf:about="&terms;description"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#monitoredFeature -->
+
+    <owl:ObjectProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#monitoredFeature">
+        <rdfs:range rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredFeature"/>
+        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#monitoredObservableProperty -->
+
+    <owl:ObjectProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#monitoredObservableProperty">
+        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
+        <rdfs:range rdf:resource="http://purl.org/voc/cpm#ObservableProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#monitoringProcedure -->
+
+    <owl:ObjectProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#monitoringProcedure">
+        <rdfs:label>Monitoring Procedure</rdfs:label>
+        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
+        <rdfs:range rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoringProcess"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#storesValuesFor -->
+
+    <owl:ObjectProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#storesValuesFor">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:label>storesValuesFor</rdfs:label>
+        <rdfs:range rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
+        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoringDataset"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#dataOriginName -->
+
+    <owl:DatatypeProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#dataOriginName">
+        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#DataOrigin"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#monitoredFeatureLabel -->
+
+    <owl:DatatypeProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#monitoredFeatureLabel">
+        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredFeature"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#monitoringProcessResource -->
+
+    <owl:DatatypeProperty rdf:about="http://eidc.ceh.ac.uk/onto/mp#monitoringProcessResource">
+        <rdfs:domain rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoringProcess"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://bodc.ac.uk/onto/opm#StatisticalMeasure -->
+
+    <owl:Class rdf:about="http://bodc.ac.uk/onto/opm#StatisticalMeasure"/>
+    
+
+
+    <!-- http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#Metadata -->
+
+    <owl:Class rdf:about="http://def.seegrid.csiro.au/isotc211/iso19115/2003/metadata#Metadata">
+        <rdfs:label xml:lang="en">Metadata record</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoringDataset"/>
+        <rdfs:comment>An ISO 19115 Metadata record.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringActivity -->
+
+    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringActivity">
+        <rdfs:subClassOf rdf:resource="http://eidc.ceh.ac.uk/onto/mp#DataOrigin"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#DataOrigin -->
+
+    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#DataOrigin">
+        <rdfs:label>Data Origin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#dataOriginName"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Things which can generate datasets  of Monitoring Properties - i.e. the Activties, Programmes, Features and Networks which enable environmental monitoring.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#Matrix -->
+
+    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#Matrix">
+        <terms:description>The aspect or characteristic of a Feature Of Interest that was observed, used or taken in order to estimate the result of observations on the Feature. As an example, where the Feature Of Interest is a river, the matirix might be &quot;water&quot; or &quot;sediment&quot;.</terms:description>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#MonitoredFeature -->
+
+    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoredFeature">
+        <rdfs:label>Monitored Feature</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.opengis.net/ont/geosparql#Feature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#monitoredFeatureLabel"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:description>A Monitored Feature is an instance of GFI_Feature. It is real world object which has geometry. Features described at discovery level tend to be large scale objects (a lake, a country, a river catchment).  Small scale sampling features like soil cores &amp; water samples that are the FOI for classifying actual result values are not individually visible at discovery level. (The dataset typically contains data from thousands of samples.)</terms:description>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty -->
+
+    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty">
+        <rdfs:label xml:lang="en">Monitored Property</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#monitoredObservableProperty"/>
+                <owl:onClass rdf:resource="http://purl.org/voc/cpm#ObservableProperty"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#monitoringProcedure"/>
+                <owl:onClass rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoringProcess"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#monitoredFeature"/>
+                <owl:onClass rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredFeature"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>A Monitored Property is an Observable Property which was monitored in, at a Monitored Feature utilising a defined Monitoring Process.
+Monitored Properties arise as a consequence of carrying out an Environmental Monitoring Activity that generates datasets. Although superficially similar to ef:MonitoringCapability it differs in that a Monitored Property is used in the metadata describing a discovery level dataset - as opposed to a theoretical capability which could be used to classify actual Observation results (and bearing in mind that an ef:MonitoringCapability may relate to a Monitoring Facility that has never actually generated any data of that type).
+
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#MonitoringDataset -->
+
+    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoringDataset">
+        <rdfs:label xml:lang="en">Monitoring Dataset</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#storesValuesFor"/>
+                <owl:onClass rdf:resource="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/prov#wasGeneratedBy"/>
+                <owl:allValuesFrom rdf:resource="http://eidc.ceh.ac.uk/onto/mp#DataOrigin"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Dataset documentation objects that can link monitored properties to the environmental monitoring objects and environmental monitoring activities from which datasets originate. Individuals of this class are  instantiated as ISO19115 metadata records in a catalogue.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/mp#MonitoringProcess -->
+
+    <owl:Class rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoringProcess">
+        <rdfs:label>Monitoring Process</rdfs:label>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://eidc.ceh.ac.uk/onto/mp#monitoringProcessResource"/>
+                <owl:allValuesFrom rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <terms:description>A Monitoring Process is a method, procedure or protocol via which an Observable Property was measured, estimated or observed.</terms:description>
+    </owl:Class>
+    
+
+
+    <!-- http://www.opengis.net/ont/geosparql#Feature -->
+
+    <owl:Class rdf:about="http://www.opengis.net/ont/geosparql#Feature"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://eidc.ceh.ac.uk/onto/mp#DataOrigin"/>
+            <rdf:Description rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoredProperty"/>
+            <rdf:Description rdf:about="http://eidc.ceh.ac.uk/onto/mp#MonitoringDataset"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+

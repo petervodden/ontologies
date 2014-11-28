@@ -1,0 +1,1191 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY terms "http://purl.org/dc/terms/" >
+    <!ENTITY ef "http://eidc.ceh.ac.uk/onto/ef#" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://eidc.ceh.ac.uk/onto/ef#"
+     xml:base="http://eidc.ceh.ac.uk/onto/ef"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:ef="http://eidc.ceh.ac.uk/onto/ef#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://eidc.ceh.ac.uk/onto/ef">
+        <dc:description>This ontology is an OWLimplementation of the UML model &quot;Data Specification on Environmental Monitoring Facilties&quot; published by the INSPIRE Infrastructure for Spatial Information in Europe.</dc:description>
+        <dc:creator>Kate Harrison
+Adam Leadbetter
+Phil Trembath
+Peter Vodden
+Dan Wright
+</dc:creator>
+        <terms:publisher>Centre for Ecology &amp; Hydrology
+Lancaster Environment Centre
+Library Avenue, Bailrigg
+Lancaster, LA1 4AP, UK
+www.ceh.ac.uk
+</terms:publisher>
+        <owl:versionInfo>Draft v7</owl:versionInfo>
+        <terms:license rdf:resource="http://creativecommons.org/licenses/by/3.0/"/>
+        <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation"/>
+        <owl:imports rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent"/>
+        <owl:versionIRI rdf:resource="http://eidc.ceh.ac.uk/onto/ef/1"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#abstractMonitoringObject.responsibleParty -->
+
+    <owl:ObjectProperty rdf:about="&ef;abstractMonitoringObject.responsibleParty">
+        <rdfs:label>responsibleParty</rdfs:label>
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"/>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+        <rdfs:subPropertyOf rdf:resource="&ef;responsibleParty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#activityTime -->
+
+    <owl:ObjectProperty rdf:about="&ef;activityTime">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="&ef;belongsTo">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ef;EnvironmentalMonitoringNetwork"/>
+                    <rdf:Description rdf:about="&ef;NetworkFacility"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ef;EnvironmentalMonitoringFacility"/>
+                    <rdf:Description rdf:about="&ef;NetworkFacility"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#boundingBox -->
+
+    <owl:ObjectProperty rdf:about="&ef;boundingBox">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent#GeographicBoundingBox"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#broader -->
+
+    <owl:ObjectProperty rdf:about="&ef;broader">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ef;AbstractMonitoringObject"/>
+                    <rdf:Description rdf:about="&ef;Hierarchy"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ef;AbstractMonitoringObject"/>
+                    <rdf:Description rdf:about="&ef;Hierarchy"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#contains -->
+
+    <owl:ObjectProperty rdf:about="&ef;contains">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ef;EnvironmentalMonitoringFacility"/>
+                    <rdf:Description rdf:about="&ef;NetworkFacility"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ef;EnvironmentalMonitoringNetwork"/>
+                    <rdf:Description rdf:about="&ef;NetworkFacility"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#environmentalMonitoringActivity.responsibleParty -->
+
+    <owl:ObjectProperty rdf:about="&ef;environmentalMonitoringActivity.responsibleParty">
+        <rdfs:label>responsibleParty</rdfs:label>
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"/>
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringActivity"/>
+        <rdfs:subPropertyOf rdf:resource="&ef;responsibleParty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#featureOfInterest -->
+
+    <owl:ObjectProperty rdf:about="&ef;featureOfInterest">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+        <rdfs:domain rdf:resource="&ef;ObservingCapability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#geometry -->
+
+    <owl:ObjectProperty rdf:about="&ef;geometry">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Object"/>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#hasObservation -->
+
+    <owl:ObjectProperty rdf:about="&ef;hasObservation">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#Observation"/>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringFeature"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#hierarchy.linkingTime -->
+
+    <owl:ObjectProperty rdf:about="&ef;hierarchy.linkingTime">
+        <rdfs:label>linkingTime</rdfs:label>
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
+        <rdfs:domain rdf:resource="&ef;Hierarchy"/>
+        <rdfs:subPropertyOf rdf:resource="&ef;linkingTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#involvedIn -->
+
+    <owl:ObjectProperty rdf:about="&ef;involvedIn">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringFeature"/>
+        <rdfs:range rdf:resource="&ef;EnvironmentalMonitoringActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#legalBackground -->
+
+    <owl:ObjectProperty rdf:about="&ef;legalBackground">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Citation"/>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#legislationCitation -->
+
+    <owl:ObjectProperty rdf:about="&ef;legislationCitation">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Citation"/>
+        <rdfs:domain rdf:resource="&ef;ReportToLegalAct"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#linkingTime -->
+
+    <owl:ObjectProperty rdf:about="&ef;linkingTime">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#narrower -->
+
+    <owl:ObjectProperty rdf:about="&ef;narrower">
+        <owl:inverseOf rdf:resource="&ef;broader"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ef;AbstractMonitoringObject"/>
+                    <rdf:Description rdf:about="&ef;Hierarchy"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ef;AbstractMonitoringObject"/>
+                    <rdf:Description rdf:about="&ef;Hierarchy"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#networkFacility.linkingTime -->
+
+    <owl:ObjectProperty rdf:about="&ef;networkFacility.linkingTime">
+        <rdfs:label>linkingTime</rdfs:label>
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
+        <rdfs:domain rdf:resource="&ef;NetworkFacility"/>
+        <rdfs:subPropertyOf rdf:resource="&ef;linkingTime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#observedProperty -->
+
+    <owl:ObjectProperty rdf:about="&ef;observedProperty">
+        <rdfs:domain rdf:resource="&ef;ObservingCapability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#observingCapability -->
+
+    <owl:ObjectProperty rdf:about="&ef;observingCapability">
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+        <rdfs:range rdf:resource="&ef;ObservingCapability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#observingTime -->
+
+    <owl:ObjectProperty rdf:about="&ef;observingTime">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
+        <rdfs:domain rdf:resource="&ef;ObservingCapability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#operationalActivityPeriod -->
+
+    <owl:ObjectProperty rdf:about="&ef;operationalActivityPeriod">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringFacility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#procedure -->
+
+    <owl:ObjectProperty rdf:about="&ef;procedure">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#Process"/>
+        <rdfs:domain rdf:resource="&ef;ObservingCapability"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#relatedTo -->
+
+    <owl:ObjectProperty rdf:about="&ef;relatedTo">
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ef;AnyDomainLink"/>
+                    <rdf:Description rdf:about="&ef;EnvironmentalMonitoringFacility"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ef;AnyDomainLink"/>
+                    <rdf:Description rdf:about="&ef;EnvironmentalMonitoringFacility"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#reportedTo -->
+
+    <owl:ObjectProperty rdf:about="&ef;reportedTo">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringFeature"/>
+        <rdfs:range rdf:resource="&ef;ReportToLegalAct"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#representativePoint -->
+
+    <owl:ObjectProperty rdf:about="&ef;representativePoint">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Point"/>
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringFacility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#responsibleParty -->
+
+    <owl:ObjectProperty rdf:about="&ef;responsibleParty">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#setUpFor -->
+
+    <owl:ObjectProperty rdf:about="&ef;setUpFor">
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringActivity"/>
+        <rdfs:range rdf:resource="&ef;EnvironmentalMonitoringProgramme"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#supersededBy -->
+
+    <owl:ObjectProperty rdf:about="&ef;supersededBy">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+        <rdfs:range rdf:resource="&ef;AbstractMonitoringObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#supersedes -->
+
+    <owl:ObjectProperty rdf:about="&ef;supersedes">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+        <rdfs:range rdf:resource="&ef;AbstractMonitoringObject"/>
+        <owl:inverseOf rdf:resource="&ef;supersededBy"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#triggers -->
+
+    <owl:ObjectProperty rdf:about="&ef;triggers">
+        <rdfs:range rdf:resource="&ef;EnvironmentalMonitoringActivity"/>
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringProgramme"/>
+        <owl:inverseOf rdf:resource="&ef;setUpFor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#uses -->
+
+    <owl:ObjectProperty rdf:about="&ef;uses">
+        <rdf:type rdf:resource="&owl;AsymmetricProperty"/>
+        <rdf:type rdf:resource="&owl;IrreflexiveProperty"/>
+        <rdfs:range rdf:resource="&ef;AbstractMonitoringFeature"/>
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringActivity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#abstractMonitoringObject.inspireId -->
+
+    <owl:DatatypeProperty rdf:about="&ef;abstractMonitoringObject.inspireId">
+        <rdfs:label>inspireId</rdfs:label>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+        <rdfs:subPropertyOf rdf:resource="&ef;inspireId"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#abstractMonitoringObject.onlineResource -->
+
+    <owl:DatatypeProperty rdf:about="&ef;abstractMonitoringObject.onlineResource">
+        <rdfs:label>onlineResource</rdfs:label>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+        <rdfs:subPropertyOf rdf:resource="&ef;onlineResource"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#activityConditions -->
+
+    <owl:DatatypeProperty rdf:about="&ef;activityConditions"/>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#additionalDescription -->
+
+    <owl:DatatypeProperty rdf:about="&ef;additionalDescription">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#CharacterString"/>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#comment -->
+
+    <owl:DatatypeProperty rdf:about="&ef;comment">
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#CharacterString"/>
+        <rdfs:domain rdf:resource="&ef;AnyDomainLink"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#description -->
+
+    <owl:DatatypeProperty rdf:about="&ef;description">
+        <rdfs:comment>Abstract - do not instantiate</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#environmentalMonitoringActivity.inspireId -->
+
+    <owl:DatatypeProperty rdf:about="&ef;environmentalMonitoringActivity.inspireId">
+        <rdfs:label>inspireId</rdfs:label>
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringActivity"/>
+        <rdfs:subPropertyOf rdf:resource="&ef;inspireId"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#environmentalMonitoringActivity.onlineResource -->
+
+    <owl:DatatypeProperty rdf:about="&ef;environmentalMonitoringActivity.onlineResource">
+        <rdfs:label>onlineResource</rdfs:label>
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringActivity"/>
+        <rdfs:subPropertyOf rdf:resource="&ef;onlineResource"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#inspireId -->
+
+    <owl:DatatypeProperty rdf:about="&ef;inspireId">
+        <rdfs:comment>Abstract Data Property</rdfs:comment>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#measurementRegime -->
+
+    <owl:DatatypeProperty rdf:about="&ef;measurementRegime">
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringFacility"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#mediaMonitored -->
+
+    <owl:DatatypeProperty rdf:about="&ef;mediaMonitored">
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#mobile -->
+
+    <owl:DatatypeProperty rdf:about="&ef;mobile">
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringFacility"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#monitoringObject.name -->
+
+    <owl:DatatypeProperty rdf:about="&ef;monitoringObject.name">
+        <rdfs:label>name</rdfs:label>
+        <rdfs:range rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#CharacterString"/>
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#name -->
+
+    <owl:DatatypeProperty rdf:about="&ef;name"/>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#observationRequired -->
+
+    <owl:DatatypeProperty rdf:about="&ef;observationRequired">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ef;ReportToLegalAct"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#observingCapability.onlineResource -->
+
+    <owl:DatatypeProperty rdf:about="&ef;observingCapability.onlineResource">
+        <rdfs:label>onlineResource</rdfs:label>
+        <rdfs:domain rdf:resource="&ef;ObservingCapability"/>
+        <rdfs:subPropertyOf rdf:resource="&ef;onlineResource"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#observingCapabilityRequired -->
+
+    <owl:DatatypeProperty rdf:about="&ef;observingCapabilityRequired">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ef;ReportToLegalAct"/>
+        <rdfs:range rdf:resource="&xsd;boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#onlineResource -->
+
+    <owl:DatatypeProperty rdf:about="&ef;onlineResource">
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#organisationLevel -->
+
+    <owl:DatatypeProperty rdf:about="&ef;organisationLevel">
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringNetwork"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#processType -->
+
+    <owl:DatatypeProperty rdf:about="&ef;processType">
+        <rdfs:domain rdf:resource="&ef;ObservingCapability"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#purpose -->
+
+    <owl:DatatypeProperty rdf:about="&ef;purpose">
+        <rdfs:domain rdf:resource="&ef;AbstractMonitoringObject"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#reportDate -->
+
+    <owl:DatatypeProperty rdf:about="&ef;reportDate">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ef;ReportToLegalAct"/>
+        <rdfs:range rdf:resource="&xsd;dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#reportToLegalAct.description -->
+
+    <owl:DatatypeProperty rdf:about="&ef;reportToLegalAct.description">
+        <rdfs:label>description</rdfs:label>
+        <rdfs:domain rdf:resource="&ef;ReportToLegalAct"/>
+        <rdfs:subPropertyOf rdf:resource="&ef;description"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#reportedEnvelope -->
+
+    <owl:DatatypeProperty rdf:about="&ef;reportedEnvelope">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="&ef;ReportToLegalAct"/>
+        <rdfs:range rdf:resource="&xsd;anyURI"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#resultAcquisitionSource -->
+
+    <owl:DatatypeProperty rdf:about="&ef;resultAcquisitionSource">
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringFacility"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#resultNature -->
+
+    <owl:DatatypeProperty rdf:about="&ef;resultNature">
+        <rdfs:domain rdf:resource="&ef;ObservingCapability"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#specialisedEMFType -->
+
+    <owl:DatatypeProperty rdf:about="&ef;specialisedEMFType">
+        <rdfs:domain rdf:resource="&ef;EnvironmentalMonitoringFacility"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object -->
+
+    <owl:Class rdf:about="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object">
+        <rdfs:label>Temporal Object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature -->
+
+    <owl:Class rdf:about="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature">
+        <rdfs:label>Feature</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Citation -->
+
+    <owl:Class rdf:about="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Citation">
+        <rdfs:label>Citation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty -->
+
+    <owl:Class rdf:about="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty">
+        <rdfs:label>Responsible party</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent#GeographicBoundingBox -->
+
+    <owl:Class rdf:about="http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent#GeographicBoundingBox">
+        <rdfs:label>Geographic bounding box</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#Observation -->
+
+    <owl:Class rdf:about="http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#Observation"/>
+    
+
+
+    <!-- http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#Process -->
+
+    <owl:Class rdf:about="http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#Process"/>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#AbstractMonitoringFeature -->
+
+    <owl:Class rdf:about="&ef;AbstractMonitoringFeature">
+        <rdfs:label>Abstract Monitoring Feature</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ef;AbstractMonitoringObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;reportedTo"/>
+                <owl:onClass rdf:resource="&ef;ReportToLegalAct"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;hasObservation"/>
+                <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#Observation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#AbstractMonitoringObject -->
+
+    <owl:Class rdf:about="&ef;AbstractMonitoringObject">
+        <rdfs:label>Abstract Monitoring Object</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;abstractMonitoringObject.inspireId"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;legalBackground"/>
+                <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Citation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;observingCapability"/>
+                <owl:allValuesFrom rdf:resource="&ef;ObservingCapability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;monitoringObject.name"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#CharacterString"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;broader"/>
+                <owl:allValuesFrom rdf:resource="&ef;Hierarchy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;narrower"/>
+                <owl:allValuesFrom rdf:resource="&ef;Hierarchy"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;abstractMonitoringObject.responsibleParty"/>
+                <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;additionalDescription"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#CharacterString"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&ef;EnvironmentalMonitoringActivity"/>
+                    <rdf:Description rdf:about="&ef;EnvironmentalMonitoringFacility"/>
+                    <rdf:Description rdf:about="&ef;EnvironmentalMonitoringNetwork"/>
+                    <rdf:Description rdf:about="&ef;EnvironmentalMonitoringProgramme"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;abstractMonitoringObject.onlineResource"/>
+                <owl:allValuesFrom rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;geometry"/>
+                <owl:onClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Object"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;mediaMonitored"/>
+                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;purpose"/>
+                <owl:allValuesFrom rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#AnyDomainLink -->
+
+    <owl:Class rdf:about="&ef;AnyDomainLink">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;relatedTo"/>
+                <owl:allValuesFrom rdf:resource="&ef;EnvironmentalMonitoringFacility"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringActivity -->
+
+    <owl:Class rdf:about="&ef;EnvironmentalMonitoringActivity">
+        <rdfs:label>Environmental Monitoring Activity</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;boundingBox"/>
+                <owl:onClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent#GeographicBoundingBox"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;activityConditions"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;environmentalMonitoringActivity.inspireId"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;environmentalMonitoringActivity.responsibleParty"/>
+                <owl:onClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#ResponsibleParty"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;boundingBox"/>
+                <owl:allValuesFrom rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/extent#GeographicBoundingBox"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;environmentalMonitoringActivity.onlineResource"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;activityTime"/>
+                <owl:onClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringFacility -->
+
+    <owl:Class rdf:about="&ef;EnvironmentalMonitoringFacility">
+        <rdfs:label>Environmental Monitoring Facility</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ef;AbstractMonitoringFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;contains"/>
+                <owl:allValuesFrom rdf:resource="&ef;NetworkFacility"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;mobile"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19103/2005/basic#Boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;operationalActivityPeriod"/>
+                <owl:onClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;belongsTo"/>
+                <owl:allValuesFrom rdf:resource="&ef;NetworkFacility"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;relatedTo"/>
+                <owl:allValuesFrom rdf:resource="&ef;AnyDomainLink"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;representativePoint"/>
+                <owl:onClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19107/2003/geometry#Point"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;resultAcquisitionSource"/>
+                <owl:allValuesFrom rdf:resource="&rdfs;Literal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;measurementRegime"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;specialisedEMFType"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringNetwork -->
+
+    <owl:Class rdf:about="&ef;EnvironmentalMonitoringNetwork">
+        <rdfs:label>Environmental Monitoring Network</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ef;AbstractMonitoringFeature"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;belongsTo"/>
+                <owl:allValuesFrom rdf:resource="&ef;NetworkFacility"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;organisationLevel"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;contains"/>
+                <owl:allValuesFrom rdf:resource="&ef;NetworkFacility"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#EnvironmentalMonitoringProgramme -->
+
+    <owl:Class rdf:about="&ef;EnvironmentalMonitoringProgramme">
+        <rdfs:label>Environmental Monitoring Programme</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&ef;AbstractMonitoringObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#Hierarchy -->
+
+    <owl:Class rdf:about="&ef;Hierarchy">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;narrower"/>
+                <owl:allValuesFrom rdf:resource="&ef;AbstractMonitoringObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;broader"/>
+                <owl:allValuesFrom rdf:resource="&ef;AbstractMonitoringObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#NetworkFacility -->
+
+    <owl:Class rdf:about="&ef;NetworkFacility"/>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#ObservingCapability -->
+
+    <owl:Class rdf:about="&ef;ObservingCapability">
+        <rdfs:label>Observing Capability</rdfs:label>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;resultNature"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;procedure"/>
+                <owl:onClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19156/2011/observation#Process"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;observingCapability.onlineResource"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;processType"/>
+                <owl:maxCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;observedProperty"/>
+                <owl:cardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;featureOfInterest"/>
+                <owl:onClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19109/2005/feature#AnyFeature"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;observingTime"/>
+                <owl:onClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19108/2002/temporal#Object"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://eidc.ceh.ac.uk/onto/ef#ReportToLegalAct -->
+
+    <owl:Class rdf:about="&ef;ReportToLegalAct">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;observationRequired"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;reportDate"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;legislationCitation"/>
+                <owl:onClass rdf:resource="http://def.seegrid.csiro.au/isotc211/iso19115/2003/citation#Citation"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;reportedEnvelope"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;anyURI"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;reportToLegalAct.description"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="&ef;observingCapabilityRequired"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="&xsd;boolean"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="&ef;EnvironmentalMonitoringActivity"/>
+            <rdf:Description rdf:about="&ef;EnvironmentalMonitoringFacility"/>
+            <rdf:Description rdf:about="&ef;EnvironmentalMonitoringNetwork"/>
+            <rdf:Description rdf:about="&ef;EnvironmentalMonitoringProgramme"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
